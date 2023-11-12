@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battleship</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="background">
+    <section class="display">
+      Player <span class="display-player player1">1</span>'s turn
+    </section>
+    <section class="container">
+      <!-- rad 0 -->
+      <div class="tile" data-row="0" data-col="0"></div>
+      <div class="tile" data-row="0" data-col="1"></div>
+      <div class="tile" data-row="0" data-col="2"></div>
+      <div class="tile" data-row="0" data-col="3"></div>
+      <div class="tile" data-row="0" data-col="4"></div>
+      <div class="tile" data-row="0" data-col="5"></div>
+      <div class="tile" data-row="0" data-col="6"></div>
+      <div class="tile" data-row="0" data-col="7"></div>
+      <div class="tile" data-row="0" data-col="8"></div>
+      <div class="tile" data-row="0" data-col="9"></div>
+      <!-- rad 1 -->
+      <div class="tile" data-row="1" data-col="0"></div>
+      <div class="tile" data-row="1" data-col="1"></div>
+      <div class="tile" data-row="1" data-col="2"></div>
+      <div class="tile" data-row="1" data-col="3"></div>
+      <div class="tile" data-row="1" data-col="4"></div>
+      <div class="tile" data-row="1" data-col="5"></div>
+      <div class="tile" data-row="1" data-col="6"></div>
+      <div class="tile" data-row="1" data-col="7"></div>
+      <div class="tile" data-row="1" data-col="8"></div>
+      <div class="tile" data-row="1" data-col="9"></div>
+      <!-- rad 2 -->
+      <div class="tile" data-row="2" data-col="0"></div>
+      <div class="tile" data-row="2" data-col="1"></div>
+      <div class="tile" data-row="2" data-col="2"></div>
+      <div class="tile" data-row="2" data-col="3"></div>
+      <div class="tile" data-row="2" data-col="4"></div>
+      <div class="tile" data-row="2" data-col="5"></div>
+      <div class="tile" data-row="2" data-col="6"></div>
+      <div class="tile" data-row="2" data-col="7"></div>
+      <div class="tile" data-row="2" data-col="8"></div>
+      <div class="tile" data-row="2" data-col="9"></div>
+      <!-- rad 3 -->
+      <div class="tile" data-row="3" data-col="0"></div>
+      <div class="tile" data-row="3" data-col="1"></div>
+      <div class="tile" data-row="3" data-col="2"></div>
+      <div class="tile" data-row="3" data-col="3"></div>
+      <div class="tile" data-row="3" data-col="4"></div>
+      <div class="tile" data-row="3" data-col="5"></div>
+      <div class="tile" data-row="3" data-col="6"></div>
+      <div class="tile" data-row="3" data-col="7"></div>
+      <div class="tile" data-row="3" data-col="8"></div>
+      <div class="tile" data-row="3" data-col="9"></div>
+      <!-- rad 4 -->
+      <div class="tile" data-row="4" data-col="0"></div>
+      <div class="tile" data-row="4" data-col="1"></div>
+      <div class="tile" data-row="4" data-col="2"></div>
+      <div class="tile" data-row="4" data-col="3"></div>
+      <div class="tile" data-row="4" data-col="4"></div>
+      <div class="tile" data-row="4" data-col="5"></div>
+      <div class="tile" data-row="4" data-col="6"></div>
+      <div class="tile" data-row="4" data-col="7"></div>
+      <div class="tile" data-row="4" data-col="8"></div>
+      <div class="tile" data-row="4" data-col="9"></div>
+      <!-- rad 5 -->
+      <div class="tile" data-row="5" data-col="0"></div>
+      <div class="tile" data-row="5" data-col="1"></div>
+      <div class="tile" data-row="5" data-col="2"></div>
+      <div class="tile" data-row="5" data-col="3"></div>
+      <div class="tile" data-row="5" data-col="4"></div>
+      <div class="tile" data-row="5" data-col="5"></div>
+      <div class="tile" data-row="5" data-col="6"></div>
+      <div class="tile" data-row="5" data-col="7"></div>
+      <div class="tile" data-row="5" data-col="8"></div>
+      <div class="tile" data-row="5" data-col="9"></div>
+      <!-- rad 6 -->
+      <div class="tile" data-row="6" data-col="0"></div>
+      <div class="tile" data-row="6" data-col="1"></div>
+      <div class="tile" data-row="6" data-col="2"></div>
+      <div class="tile" data-row="6" data-col="3"></div>
+      <div class="tile" data-row="6" data-col="4"></div>
+      <div class="tile" data-row="6" data-col="5"></div>
+      <div class="tile" data-row="6" data-col="6"></div>
+      <div class="tile" data-row="6" data-col="7"></div>
+      <div class="tile" data-row="6" data-col="8"></div>
+      <div class="tile" data-row="6" data-col="9"></div>
+      <!-- rad 7 -->
+      <div class="tile" data-row="7" data-col="0"></div>
+      <div class="tile" data-row="7" data-col="1"></div>
+      <div class="tile" data-row="7" data-col="2"></div>
+      <div class="tile" data-row="7" data-col="3"></div>
+      <div class="tile" data-row="7" data-col="4"></div>
+      <div class="tile" data-row="7" data-col="5"></div>
+      <div class="tile" data-row="7" data-col="6"></div>
+      <div class="tile" data-row="7" data-col="7"></div>
+      <div class="tile" data-row="7" data-col="8"></div>
+      <div class="tile" data-row="7" data-col="9"></div>
+      <!-- rad 8 -->
+      <div class="tile" data-row="8" data-col="0"></div>
+      <div class="tile" data-row="8" data-col="1"></div>
+      <div class="tile" data-row="8" data-col="2"></div>
+      <div class="tile" data-row="8" data-col="3"></div>
+      <div class="tile" data-row="8" data-col="4"></div>
+      <div class="tile" data-row="8" data-col="5"></div>
+      <div class="tile" data-row="8" data-col="6"></div>
+      <div class="tile" data-row="8" data-col="7"></div>
+      <div class="tile" data-row="8" data-col="8"></div>
+      <div class="tile" data-row="8" data-col="9"></div>
+      <!-- rad 9 -->
+      <div class="tile" data-row="9" data-col="0"></div>
+      <div class="tile" data-row="9" data-col="1"></div>
+      <div class="tile" data-row="9" data-col="2"></div>
+      <div class="tile" data-row="9" data-col="3"></div>
+      <div class="tile" data-row="9" data-col="4"></div>
+      <div class="tile" data-row="9" data-col="5"></div>
+      <div class="tile" data-row="9" data-col="6"></div>
+      <div class="tile" data-row="9" data-col="7"></div>
+      <div class="tile" data-row="9" data-col="8"></div>
+      <div class="tile" data-row="9" data-col="9"></div>
+    </section>
+    <section class="display announcer hide"></section>
+    <section class="controls">
+      <button>Add Ship</button>
+    </section>
+  </div>
+  <script src="main-VG.js"></script>
+
+</body>
+
+</html>
