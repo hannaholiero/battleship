@@ -1,31 +1,5 @@
-/*
-
-
-* isValidShip
-* markCoord
-* hasLost
-* registerHitOrBom
-* switchPlayer
-* display
-* playerDisplay
-* tiles (använd querySelectorAll tillsammans med Array.from metoden)
-* announcer
-* button
-
-och följande funktioner:
-* announce
-* clearAnnounce
-* displayTurn
-* getCoordinates
-* clearTile
-* clearGrid
-* removeShip
-
-*/
 
 ///////////////////// Globala variabler //////////////////////////
-
-
 
 const rows = 10;
 const cols = 10;
@@ -54,6 +28,7 @@ const playerDisplay = document.querySelector(".display-player");
 const tiles = Array.from(document.querySelectorAll(".tile"));
 const announcer = document.querySelector(".announcer");
 const button = document.querySelector("button");
+
 
 ///////////////////// Helper functions //////////////////////////
 
@@ -123,16 +98,6 @@ function clearAnnounce() {
   announcer.classList.add("hide");
 }
 
-//displays in DOM node playerDisplay the current players turn
-// tip use player.mark (1 or 2) and display that in the <span (innerHTML)
-// remove previous class (.player1 or .player2)
-// add new class (.player${player.mark})
-// function displayTurn(player) {
-//   playerDisplay.innerHTML = `Player <span class="display-player player${player.mark}">${player.mark}</span>`;
-//   playerDisplay.classList.remove("player1", "player2");
-//   playerDisplay.classList.add(`player${player.mark}`);
-// }
-
 function displayTurn(player) {
   console.log(playerDisplay); // Kontrollera att det här visar det förväntade elementet
   console.log(player); // Kontrollera att spelarobjektet (player) är korrekt
@@ -157,10 +122,6 @@ function getCoordinates(tile) {
   const col = parseInt(tile.getAttribute("data-col"));
   return { row, col };
 }
-/* usage: 
-const coord = getCoordinates(tiles[0]);
-console.log(coord); // { row: 0, col: 0 }
-*/
 
 // given a tile (DOM node) clears that tile in grid
 // gets rid of .player1 and .player2 classes as well as clears innerHTML
@@ -185,7 +146,6 @@ function removeShip(ship) {
     }
   });
 }
-
 
 // given a tile an mark (1, 2 or X) adds the mark on the tile
 function addMark(tile, mark) {
@@ -240,7 +200,6 @@ function glowShip(ship, ms) {
 
 ///////////////////// Initialize ships //////////////////////////
 
-
 function isValidShip(ship) {
   // DENNA ÄR EGEN
   // Check if the ship has at least two coordinates and at most five coordinates
@@ -272,7 +231,6 @@ function isValidShip(ship) {
   return true;
 }
 
-
 // Ask both users for all their ships positions
 //    player: one of the players
 //    callback: function to be called when all ships have been placed by player
@@ -294,7 +252,7 @@ function initializeShips(player, callback) {
   function handleAddShipClick() {
     if (isValidShip(currentShip)) {
       // let the ship glow for 1 sec in grid to mark that it is added
-      glowShip(currentShip, 1200);
+      glowShip(currentShip, 1000);
 
       // register ship coordinates in players ships array
       player.ships = [...currentShip, ...player.ships];
@@ -313,10 +271,12 @@ function initializeShips(player, callback) {
         callback(); // now we can execute the callback when button has been clicked for the last time
       }
     } else {
-      alert(`HALLÅE DU GÖR FEL!
-      * Ships must be straigh lines
-      * Each ship must be larger than 2 coordinates
-      * Each ship must not be longer than 5 coordinates
+      alert(`HALLÅE ELLER! DU GÖR FEL!
+      * Skeppet måste vara rakt, goddamn!
+      * Skeppet måste vara mer än två rutor långa, 
+      det är ju ingen jolle.
+      * Skeppet får inte vara mer än fem rutor
+      det är inte Stena Line det här.
       `);
       removeShip(currentShip); // remove the last ship since it was not valid
       currentShip = []; // reset ship
@@ -335,7 +295,6 @@ function initializeShips(player, callback) {
 function markCoord(coord, mark) {
   return { ...coord, mark };
 }
-
 
 // determines if player has lost (true/false)
 // tip: check out player.ships and player.hits ;-)
@@ -367,14 +326,6 @@ function switchPlayers(players) {
   players.enemy = temp;
   return players;
 }
-
-// function switchPlayers(players) {
-//   const temp = players.current;
-//   players.current { mark: 1, ships: [], hits: [] };
-//   players.enemy  { mark: 2, ships: [], hits: [] };
-// }
-
-
 
 
 let targetChoosen = false; // flag to determine if user has clicked at a tile
@@ -412,8 +363,6 @@ function handleTileClick(evt) {
     targetChoosen = true; // mark flag so that we know user has clicked on tile
   }
 }
-
-
 
 
 // game loop, main parts are
